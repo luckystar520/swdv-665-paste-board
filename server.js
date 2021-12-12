@@ -32,7 +32,7 @@ var Paste = mongoose.model('Paste', {
 
 
 // Get all paste items
-app.get('/api/Paste_Board', function(req, res) {
+app.get('/api/paste', function(req, res) {
 
     console.log("Listing paste items...");
 
@@ -49,7 +49,7 @@ app.get('/api/Paste_Board', function(req, res) {
 });
 
 // Create a paste Item
-app.post('/api/Paste_Board', function(req, res) {
+app.post('/api/paste', function(req, res) {
 
     console.log("Creating paste item...");
 
@@ -72,7 +72,7 @@ app.post('/api/Paste_Board', function(req, res) {
 });
 
 // Update a paste Item
-app.put('/api/Paste_Board/:id', function(req, res) {
+app.put('/api/paste/:id', function(req, res) {
     const paste = {
         content: req.body.content
     };
@@ -87,7 +87,7 @@ app.put('/api/Paste_Board/:id', function(req, res) {
 
 
 // Delete a paste Item
-app.delete('/api/Paste_Board/:id', function(req, res) {
+app.delete('/api/paste/:id', function(req, res) {
     Paste.remove({
         _id: req.params.id
     }, function(err, paste) {
